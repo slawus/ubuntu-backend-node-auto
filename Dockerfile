@@ -37,3 +37,10 @@ RUN npm install -g bower
 # Install Ansible
 #
 RUN apt-get install -y ansible
+
+#
+# Clone CI tools
+#
+RUN git clone https://git.jazzy.pro/jazzy-ci-tools/ci-scripts.git /root/ci-scripts
+RUN chmod a+x /root/ci-scripts/*
+ENV PATH /root/ci-scripts:$PATH
