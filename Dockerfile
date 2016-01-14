@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM olegpuzanov/docker-symfony2
 
 ENV HOME /root
 ENV DEBIAN_FRONTEND noninteractive
@@ -32,6 +32,11 @@ RUN ln -fs /usr/bin/nodejs /usr/bin/node
 #
 RUN npm install -g gulp
 RUN npm install -g bower
+
+#
+# Install MySQL
+#
+RUN apt-get install mysql-server mysql-client
 
 #
 # Install Ansible
