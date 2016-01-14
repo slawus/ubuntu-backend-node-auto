@@ -36,7 +36,7 @@ RUN npm install -g bower
 #
 # Install MySQL
 #
-RUN apt-get install mysql-server mysql-client
+RUN apt-get install mysql-server mysql
 
 #
 # Install Ansible
