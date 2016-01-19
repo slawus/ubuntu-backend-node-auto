@@ -1,4 +1,4 @@
-FROM olegpuzanov/docker-symfony2
+FROM ubuntu:14.04
 
 ENV HOME /root
 ENV DEBIAN_FRONTEND noninteractive
@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install basic packages
 #
 RUN apt-get update
-RUN apt-get install -y software-properties-common build-essential curl
+RUN apt-get install -y software-properties-common build-essential curl wget
 
 #
 # Add repositories and update packages list
@@ -28,15 +28,20 @@ RUN apt-get install -y nodejs
 RUN ln -fs /usr/bin/nodejs /usr/bin/node
 
 #
-# Install Gulp, Bower
+# Install global npm packages: gulp, bower
 #
-RUN npm install -g gulp
-RUN npm install -g bower
+RUN npm install -g gulp bower
 
 #
-# Install MySQL
+# Install SASS and Compass
 #
-RUN apt-get install mysql-server mysql
+RUN apt-get install -y ruby
+RUN gem install sass compass
+
+#
+# Install Composer
+#
+RUN wget -O /bin/composer https://getcomposer.org/composer.phar && chmod a+x /bin/composer
 
 #
 # Install Ansible
