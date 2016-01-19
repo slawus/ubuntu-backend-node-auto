@@ -7,6 +7,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install basic packages
 #
 RUN apt-get update
+RUN apt-key update
 RUN apt-get install -y software-properties-common build-essential curl wget
 
 #
