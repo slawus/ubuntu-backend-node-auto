@@ -36,7 +36,7 @@ RUN npm install -g gulp bower
 #
 # Install SASS and Compass
 #
-RUN apt-get install -y ruby
+RUN apt-get install -y ruby ruby-dev
 RUN gem install sass compass
 
 #
