@@ -13,7 +13,7 @@ RUN apt-get install -y software-properties-common build-essential curl wget
 #
 # Add repositories and update packages list
 #
-RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
 RUN apt-add-repository ppa:ansible/ansible
 RUN apt-get update
 
